@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "collloginportal-42de"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "collloginportal-42de"
+  template:
+    metadata:
+      labels:
+        app: "collloginportal-42de"
+    spec:
+      containers:
+        - name: "collloginportal-42de"
+          image: "colllogincontainercode.azurecr.io/collloginportal"
+          ports:
+          - containerPort: 80
